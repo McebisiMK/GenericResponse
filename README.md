@@ -27,3 +27,97 @@ Wraps all errors, info messages and data into one object. IsValid indicates whet
 - [Response](https://github.com/McebisiMK/GenericValidatableResponse/blob/main/Models/Response.cs): Inherits from **ValidatableResponse**
     - **Data**: This is the body of the response. 
 ---
+
+**Responses:**
+- **Happy cases:**
+    <br/><br/>
+    **Array of strings**
+    ```
+    {
+        "data": [
+            "First",
+            "Second"
+        ],
+        "isValid": true,
+        "errors": [],
+        "messages": [
+            "First info message",
+            "Second info message"
+        ]
+    }
+    ```
+    
+    **Array of objects**
+    ```
+    {
+        "data": [
+            {
+                "name": "Test",
+                "lastName": "Tester"
+            },
+            {
+                "name": "Test 2",
+                "lastName": "Tester 2"
+            }
+        ],
+        "isValid": true,
+        "errors": [],
+        "messages": [
+            "Retrieving employees",
+            "Retrieved employees"
+        ]
+    }
+    ```
+
+    **Single object**
+    ```
+    {
+        "data": {
+            "name": "Test 2",
+            "lastName": "Tester 2"
+        },
+        "isValid": true,
+        "errors": [],
+        "messages": [
+            "Retrieving employees",
+            "Retrieved employees"
+        ]
+    }
+    ```
+
+    **Value response**
+    ```
+    {
+        "data": "05/05/2005",
+        "isValid": true,
+        "errors": [],
+        "messages": [
+            "Retrieving employee date of birth",
+            "Retrieved employee date of birth"
+        ]
+    }
+    ```
+
+    **Void response**
+    ```
+    {
+        "isValid": true,
+        "errors": [],
+        "messages": [
+            "Adding employee details",
+            "Added employee details"
+        ]
+    }
+    ```
+- **Sad Case**
+    ```
+    {
+        "isValid": false,
+        "errors": [
+            "Something happened when adding employee details. Error: A network-related or instance-specific error occurred while establishing a connection to SQL Server."
+        ],
+        "messages": [
+            "Adding employee details"
+        ]
+    }
+    ```
