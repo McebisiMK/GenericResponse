@@ -18,7 +18,7 @@ Wraps all errors, info messages and data into one object. IsValid indicates whet
     
     - **Methods**
         - **AddError**: Adds an error message to the response.
-        - **AddError**: Adds an info message to the response.
+        - **AddMessage**: Adds an info message to the response.
         - **ClearErrors**: Clears all error messages from the response.
         - **ClearMessages**: Clears all info messages from the response.
         - **MergeResponses**: Copies over all error and info messages from one response to the other. 
