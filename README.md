@@ -114,7 +114,7 @@ Wraps all errors, info messages and data into one object. IsValid indicates whet
     {
         "isValid": false,
         "errors": [
-            "Something happened when adding employee details. Error: A network-related or instance-specific error occurred while establishing a connection to SQL Server."
+            "Something happened while adding employee details. Error: A network-related or instance-specific error occurred while establishing a connection to SQL Server."
         ],
         "messages": [
             "Adding employee details"
