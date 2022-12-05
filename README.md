@@ -79,8 +79,8 @@ Wraps all errors, info messages and data into one object. IsValid indicates whet
         "isValid": true,
         "errors": [],
         "messages": [
-            "Retrieving employees",
-            "Retrieved employees"
+            "Retrieving employee details",
+            "Retrieved employee details"
         ]
     }
     ```
