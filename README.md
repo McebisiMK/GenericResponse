@@ -18,7 +18,7 @@ Wraps all errors, info messages and data into one object. IsValid indicates whet
     
     - **Methods**
         - **AddError**: Adds an error message to the response.
-        - **AddError**: Adds an info message to the response.
+        - **AddMessage**: Adds an info message to the response.
         - **ClearErrors**: Clears all error messages from the response.
         - **ClearMessages**: Clears all info messages from the response.
         - **MergeResponses**: Copies over all error and info messages from one response to the other. 
@@ -27,3 +27,97 @@ Wraps all errors, info messages and data into one object. IsValid indicates whet
 - [Response](https://github.com/McebisiMK/GenericValidatableResponse/blob/main/Models/Response.cs): Inherits from **ValidatableResponse**
     - **Data**: This is the body of the response. 
 ---
+
+**Responses:**
+- **Happy cases:**
+    <br/><br/>
+    **Array of strings**
+    ```
+    {
+        "data": [
+            "First",
+            "Second"
+        ],
+        "isValid": true,
+        "errors": [],
+        "messages": [
+            "First info message",
+            "Second info message"
+        ]
+    }
+    ```
+    
+    **Array of objects**
+    ```
+    {
+        "data": [
+            {
+                "name": "Test",
+                "lastName": "Tester"
+            },
+            {
+                "name": "Test 2",
+                "lastName": "Tester 2"
+            }
+        ],
+        "isValid": true,
+        "errors": [],
+        "messages": [
+            "Retrieving employees",
+            "Retrieved employees"
+        ]
+    }
+    ```
+
+    **Single object**
+    ```
+    {
+        "data": {
+            "name": "Test 2",
+            "lastName": "Tester 2"
+        },
+        "isValid": true,
+        "errors": [],
+        "messages": [
+            "Retrieving employee details",
+            "Retrieved employee details"
+        ]
+    }
+    ```
+
+    **Value response**
+    ```
+    {
+        "data": "05/05/2005",
+        "isValid": true,
+        "errors": [],
+        "messages": [
+            "Retrieving employee date of birth",
+            "Retrieved employee date of birth"
+        ]
+    }
+    ```
+
+    **Void response**
+    ```
+    {
+        "isValid": true,
+        "errors": [],
+        "messages": [
+            "Adding employee details",
+            "Added employee details"
+        ]
+    }
+    ```
+- **Sad Case**
+    ```
+    {
+        "isValid": false,
+        "errors": [
+            "Something happened while adding employee details. Error: A network-related or instance-specific error occurred while establishing a connection to SQL Server."
+        ],
+        "messages": [
+            "Adding employee details"
+        ]
+    }
+    ```
