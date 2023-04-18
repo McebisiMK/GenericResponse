@@ -38,7 +38,7 @@ namespace GenericValidatableResponse
             Messages.AddRange(response.Messages);
         }
 
-        public T MergeResponseWithData<T>(Response<T> genericResponse)
+        public T MergeResponseWithData<T>(GenericResponse<T> genericResponse)
         {
             var response = default(T);
 

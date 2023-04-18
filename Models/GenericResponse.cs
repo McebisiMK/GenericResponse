@@ -1,6 +1,6 @@
 namespace GenericValidatableResponse
 {
-    public class Response<T> : ValidatableResponse
+    public class GenericResponse<T> : ValidatableResponse
     {
         public T Data { get; set; }
     }
