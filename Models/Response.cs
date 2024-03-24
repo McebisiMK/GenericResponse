@@ -1,8 +1,13 @@
-using GenericValidatableResponse.Extensions;
+using GenericResponse.Extensions;
 
-namespace GenericValidatableResponse
+namespace GenericResponse.Models
 {
-    public class ValidatableResponse
+    public class Response<T> : Response
+    {
+        public T Data { get; set; }
+    }
+
+    public class Response
     {
         public bool IsValid { get { return !Errors.Any(); } }
         public List<string> Errors { get; set; } = new List<string>();
@@ -30,7 +35,7 @@ namespace GenericValidatableResponse
             Messages.Clear();
         }
 
-        public void MergeResponses(ValidatableResponse response)
+        public void MergeResponses(Response response)
         {
             if (response is null) return;
 
@@ -38,11 +43,11 @@ namespace GenericValidatableResponse
             Messages.AddRange(response.Messages);
         }
 
-        public T MergeResponseWithData<T>(GenericResponse<T> genericResponse)
+        public T MergeResponseWithData<T>(Response<T> genericResponse)
         {
             var response = default(T);
 
-            MergeResponses(genericResponse as ValidatableResponse);
+            MergeResponses(genericResponse as Response);
 
             if (IsValid)
                 response = genericResponse.Data;
