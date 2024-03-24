@@ -24,7 +24,7 @@ Wraps all errors, info messages and data into one object. IsValid indicates whet
         - **MergeResponses**: Copies over all error and info messages from one response to the other. 
         - **MergeResponseWithData**: Copies over all error and info messages from one response to the other and returns the response Data (Body).
 
-- [Response<T>](https://github.com/McebisiMK/GenericResponse/blob/main/Models/Response.cs): Inherits from **Response**
+- [Response<>](https://github.com/McebisiMK/GenericResponse/blob/main/Models/Response.cs): Inherits from **Response**
     - **Data**: This is the body of the response. 
 ---
 
